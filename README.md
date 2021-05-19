@@ -1,6 +1,6 @@
 
 
-# MyOrg
+# Project
 
 This project was generated using [Nx](https://nx.dev).
 
@@ -8,36 +8,44 @@ This project was generated using [Nx](https://nx.dev).
 
 🔎 **Powerful, Extensible Dev Tools**
 
-## Adding capabilities to your workspace
+## Steps
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+We generate a monorepo with for two applications, a ionic mobile app, and angular ionic webapp.
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+## Generate the more
 
-Below are our core plugins:
+npx create-nx-workspace my-org --preset=empty
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+## Install and initialize the nxtend plugins
 
-There are also many [community plugins](https://nx.dev/nx-community) you could add.
+> npm install --save-dev @nxtend/ionic-angular
 
-## Generate an application
+> nx generate @nxtend/ionic-angular:init
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+## Generate and run a sample web applications
 
-> You can use any of the plugins above to generate applications as well.
+> nx generate @nxtend/ionic-angular:application angular
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+It creates an angular webapp skeleton under apps folder.
+
+The reference is
+https://nxtend.dev/docs/ionic-angular/getting-started
+
+In order to run it in a development server
+
+> nx serve angular-webapp
+
+## Generate an app
+
+> nx generate @nxtend/ionic-angular:app ionic-app
+
+It creates an app skeleton under apps folder.
+
+In order to run it in a development server
+
+> nx serve ionic-app --port 4201
+
+Reference in https://ionicframework.com/blog/ionic-angular-monorepos-with-nx/
 
 ## Generate a library
 

@@ -14,14 +14,34 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "my-app": {
+      "tags": []
+    },
+    "my-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["my-app"]
+    },
+    "ionic-app": {
+      "tags": []
+    },
+    "ionic-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ionic-app"]
+    },
+    "angular-webapp": {
+      "tags": []
+    },
+    "angular-webapp-e2e": {
+      "tags": [],
+      "implicitDependencies": ["angular-webapp"]
+    },
+    "angular-custom-lib": {
+      "tags": []
+    }
+  }
 }
