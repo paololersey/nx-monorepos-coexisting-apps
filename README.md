@@ -55,3 +55,9 @@ Run `nx generate @nrwl/angular:component MyComponent --project angular-custom-li
 
 Libraries are shareable across libraries and applications. They can be imported from `@my-org/angular-custom-lib`.
 
+## Generate a store
+
+`nx g @nrwl/angular:ngrx app --module=apps/angular-webapp/src/app/app.module.ts --root`
+
+`nx g @nrwl/angular:lib login`
+
