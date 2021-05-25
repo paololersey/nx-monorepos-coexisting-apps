@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AngularCustomLibModule } from '@my-org/angular-custom-lib';
+import { AngularCentralLibModule } from '@my-org/angular-central-lib';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -21,6 +22,7 @@ import { environment } from '../environments/environment';
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularCustomLibModule,
+    AngularCentralLibModule,
     StoreModule.forRoot(
       {},
       {

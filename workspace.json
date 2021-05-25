@@ -663,6 +663,33 @@
           }
         }
       }
+    },
+    "angular-central-lib": {
+      "projectType": "library",
+      "root": "libs/angular-central-lib",
+      "sourceRoot": "libs/angular-central-lib/src",
+      "prefix": "my-org",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/angular-central-lib"
+          ],
+          "options": {
+            "jestConfig": "libs/angular-central-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/angular-central-lib/src/**/*.ts",
+              "libs/angular-central-lib/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

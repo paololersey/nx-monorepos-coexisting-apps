@@ -42,6 +42,9 @@
     },
     "angular-custom-lib": {
       "tags": []
+    },
+    "angular-central-lib": {
+      "tags": []
     }
   }
 }

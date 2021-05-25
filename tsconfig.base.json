@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-org/angular-custom-lib": ["libs/angular-custom-lib/src/index.ts"]
+      "@my-org/angular-custom-lib": ["libs/angular-custom-lib/src/index.ts"],
+      "@my-org/angular-central-lib": ["libs/angular-central-lib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

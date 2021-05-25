@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/apps/ionic-app',
     '<rootDir>/apps/angular-webapp',
     '<rootDir>/libs/angular-custom-lib',
+    '<rootDir>/libs/angular-central-lib',
   ],
 };
