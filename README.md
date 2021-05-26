@@ -61,5 +61,5 @@ Libraries are shareable across libraries and applications. They can be imported 
 
 `nx g @nrwl/angular:lib angular-central-lib`
 
-`nx g @nrwl/angular:ngrx login --module=libs/angular-central-lib/src/lib/angular-central-lib.module.ts --directory +state/login --defaults`
+`nx g @nrwl/angular:ngrx login --module=libs/angular-central-lib/src/lib/angular-central-lib.module.ts --directory +state/login --no-interactive` -> add a login state handling for login 
 

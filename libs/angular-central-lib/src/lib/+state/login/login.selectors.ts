@@ -1,13 +1,13 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import {
   LOGIN_FEATURE_KEY,
-  State,
+  LoginState,
   LoginPartialState,
   loginAdapter,
 } from './login.reducer';
 
 // Lookup the 'Login' feature state managed by NgRx
-export const getLoginState = createFeatureSelector<LoginPartialState, State>(
+export const getLoginState = createFeatureSelector<LoginPartialState, LoginState>(
   LOGIN_FEATURE_KEY
 );
 
@@ -15,25 +15,25 @@ const { selectAll, selectEntities } = loginAdapter.getSelectors();
 
 export const getLoginLoaded = createSelector(
   getLoginState,
-  (state: State) => state.loaded
+  (state: LoginState) => state.loaded
 );
 
 export const getLoginError = createSelector(
   getLoginState,
-  (state: State) => state.error
+  (state: LoginState) => state.error
 );
 
-export const getAllLogin = createSelector(getLoginState, (state: State) =>
+export const getAllLogin = createSelector(getLoginState, (state: LoginState) =>
   selectAll(state)
 );
 
-export const getLoginEntities = createSelector(getLoginState, (state: State) =>
+export const getLoginEntities = createSelector(getLoginState, (state: LoginState) =>
   selectEntities(state)
 );
 
 export const getSelectedId = createSelector(
   getLoginState,
-  (state: State) => state.selectedId
+  (state: LoginState) => state.selectedId
 );
 
 export const getSelected = createSelector(

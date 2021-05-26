@@ -1,7 +1,10 @@
 import { createAction, props } from '@ngrx/store';
 import { LoginEntity } from './login.models';
 
-export const init = createAction('[Login Page] Init');
+export const loadLoginInit = createAction(
+ '[Login Page] Init',
+ props<{ username: string; password: string }>()
+);
 
 export const loadLoginSuccess = createAction(
   '[Login/API] Load Login Success',

@@ -6,32 +6,32 @@ import { LoginEntity } from './login.models';
 
 export const LOGIN_FEATURE_KEY = 'login';
 
-export interface State extends EntityState<LoginEntity> {
+export interface LoginState extends EntityState<LoginEntity> {
   selectedId?: string | number; // which Login record has been selected
   loaded: boolean; // has the Login list been loaded
   error?: string | null; // last known error (if any)
 }
 
 export interface LoginPartialState {
-  readonly [LOGIN_FEATURE_KEY]: State;
+  readonly [LOGIN_FEATURE_KEY]: LoginState;
 }
 
 export const loginAdapter: EntityAdapter<LoginEntity> = createEntityAdapter<LoginEntity>();
 
-export const initialState: State = loginAdapter.getInitialState({
+export const initialStateLogin: LoginState = loginAdapter.getInitialState({
   // set initial required properties
   loaded: false,
 });
 
 const loginReducer = createReducer(
-  initialState,
-  on(LoginActions.init, (state) => ({ ...state, loaded: false, error: null })),
+  initialStateLogin,
+  on(LoginActions.loadLoginInit, (state) => ({ ...state, loaded: false, error: null })),
   on(LoginActions.loadLoginSuccess, (state, { login }) =>
     loginAdapter.setAll(login, { ...state, loaded: true })
   ),
   on(LoginActions.loadLoginFailure, (state, { error }) => ({ ...state, error }))
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducerExportLogin(state: LoginState | undefined, action: Action) {
   return loginReducer(state, action);
 }

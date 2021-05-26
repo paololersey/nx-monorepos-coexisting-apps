@@ -1,7 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { init, LoginEntity, User } from '@my-org/angular-central-lib';
+import { loadLoginInit, User } from '@my-org/angular-central-lib';
 import { Store } from '@ngrx/store';
 import { LoginEffects } from 'libs/angular-central-lib/src/lib/+state/login/login.effects';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'my-org-root',
@@ -9,7 +12,6 @@ import { LoginEffects } from 'libs/angular-central-lib/src/lib/+state/login/logi
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  private user: LoginEntity;
   public appPages = [
     { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
     { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
@@ -19,10 +21,11 @@ export class AppComponent implements OnInit {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor(private store: Store) {}
+  constructor(private store: Store, private http: HttpClient) {}
   ngOnInit(): void {
-    user: {}
-    this.store.dispatch(init());
-    
+    var username =  "test@angular-university.io";
+    var password =  "test";
+    this.store.dispatch(loadLoginInit({username: username, password: password}));
   }
+
 }

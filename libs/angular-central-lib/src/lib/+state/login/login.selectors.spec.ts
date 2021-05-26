@@ -1,5 +1,5 @@
 import { LoginEntity } from './login.models';
-import { State, loginAdapter, initialState } from './login.reducer';
+import { LoginState, loginAdapter, initialStateLogin } from './login.reducer';
 import * as LoginSelectors from './login.selectors';
 
 describe('Login Selectors', () => {
@@ -22,7 +22,7 @@ describe('Login Selectors', () => {
           createLoginEntity('PRODUCT-CCC'),
         ],
         {
-          ...initialState,
+          ...initialStateLogin,
           selectedId: 'PRODUCT-BBB',
           error: ERROR_MSG,
           loaded: true,
