@@ -5,7 +5,7 @@ export interface LoginEntity {
   id: string | number; // Primary ID
 }
 
-export interface User {
-  id: string;
-  mail: string;
+export class User {
+  username: string;
+  password: string;
 }

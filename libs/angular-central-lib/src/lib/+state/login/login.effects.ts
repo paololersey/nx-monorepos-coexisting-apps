@@ -26,10 +26,10 @@ export class LoginEffects {
           this.authService.login(user, password).
           subscribe(user => {
             // Your custom service 'load' logic goes here. For now just return a success action...
-            return LoginActions.loadLoginSuccess({ login: [] });
+            return LoginActions.loadLoginSuccess({ user });
           }, 
           error => {
-            console.error('Error', error);
+            console.log(error);
             return LoginActions.loadLoginFailure({ error });
            
           });

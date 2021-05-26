@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { loadLoginInit, User } from '@my-org/angular-central-lib';
+import { loadLoginInit, loadLoginSuccess, User } from '@my-org/angular-central-lib';
 import { Store } from '@ngrx/store';
 import { LoginEffects } from 'libs/angular-central-lib/src/lib/+state/login/login.effects';
 import { Observable } from 'rxjs';
@@ -12,6 +12,7 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  public user: User = new User();
   public appPages = [
     { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
     { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
@@ -25,7 +26,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     var username =  "test@angular-university.io";
     var password =  "test";
+    this.user.username ="test@angular-university.io";
+    this.user.password ="test";
     this.store.dispatch(loadLoginInit({username: username, password: password}));
+
   }
 
 }
