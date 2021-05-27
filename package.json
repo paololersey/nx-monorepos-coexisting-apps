@@ -5,6 +5,7 @@
   "scripts": {
     "nx": "nx",
     "start": "nx serve --proxy-config ./proxy.json",
+	"server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",

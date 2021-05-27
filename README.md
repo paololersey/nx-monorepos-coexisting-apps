@@ -59,6 +59,7 @@ Libraries are shareable across libraries and applications. They can be imported 
 ## Generate a store 
 
 `nx g @nrwl/angular:ngrx app --module=apps/angular-webapp/src/app/app.module.ts --root`
+Ref. : https://nx.dev/latest/angular/guides/misc-ngrx
 
 ## Generate a library
 

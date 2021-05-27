@@ -1,6 +1,10 @@
 import { createAction, props } from '@ngrx/store';
 import { LoginEntity, User } from './login.models';
 
+
+export const loadLoginLanding = createAction(
+  '[Login Page] Landing'
+ );
 export const loadLoginInit = createAction(
  '[Login Page] Init',
  props<{ username: string; password: string }>()
