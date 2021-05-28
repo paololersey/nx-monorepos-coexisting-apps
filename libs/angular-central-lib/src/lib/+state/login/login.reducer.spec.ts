@@ -1,12 +1,13 @@
-import { LoginEntity } from './login.models';
 import * as LoginActions from './login.actions';
-import { LoginState, initialStateLogin, reducerExportLogin } from './login.reducer';
+import { LoginEntity } from './login.models';
+import { initialStateLogin, reducerExportLogin } from './login.reducer';
+
 
 describe('Login Reducer', () => {
-  const createLoginEntity = (id: string, mail = '') =>
+  const createLoginEntity = (id: string, name = '') =>
     ({
       id,
-      mail: mail || `mail-${id}`,
+      name: name || `name-${id}`,
     } as LoginEntity);
 
   beforeEach(() => {});
@@ -19,7 +20,7 @@ describe('Login Reducer', () => {
       ];
       const action = LoginActions.loadLoginSuccess({ login });
 
-      const result: LoginState = reducerExportLogin(initialStateLogin, action);
+      const result: State = reducer(initialState, action);
 
       expect(result.loaded).toBe(true);
       expect(result.ids.length).toBe(2);

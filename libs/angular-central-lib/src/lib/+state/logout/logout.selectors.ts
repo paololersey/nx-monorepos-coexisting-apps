@@ -32,6 +32,18 @@ export const getLogoutEntities = createSelector(
   (state: State) => selectEntities(state)
 );
 
+export const getSelectedId = createSelector(
+  getLogoutState,
+  (state: State) => state
+);
+
+
+export const getSelected = createSelector(
+  getLogoutEntities,
+  getSelectedId,
+  (entities, selectedId) => selectedId
+);
+
 
 
 

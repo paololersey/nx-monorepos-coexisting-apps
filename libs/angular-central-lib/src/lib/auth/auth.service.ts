@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import { User } from '@my-org/angular-central-lib';
+import { User } from '../+state/login/user.model';
+
 
 
 
@@ -13,7 +14,7 @@ export class AuthService {
 
     constructor(private http: HttpClient) {}
 
-    login(email: string, password: string): Observable<User> {
+    tryLogin(email: string, password: string): Observable<User> {
         return this.http.post<User>('/api/login', {email, password});
     }
 

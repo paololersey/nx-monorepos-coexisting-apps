@@ -1,10 +1,11 @@
 import { createAction, props } from '@ngrx/store';
-import { LoginEntity, User } from './login.models';
+import { LoginEntity } from './login.models';
 
 
 export const loadLoginLanding = createAction(
   '[Login Page] Landing'
  );
+
 export const loadLoginInit = createAction(
  '[Login Page] Init',
  props<{ username: string; password: string }>()
@@ -12,7 +13,7 @@ export const loadLoginInit = createAction(
 
 export const loadLoginSuccess = createAction(
   '[Login/API] Load Login Success',
-  props<{ user: User }>()
+  props<{ login: LoginEntity[] }>()
 );
 
 export const loadLoginFailure = createAction(
