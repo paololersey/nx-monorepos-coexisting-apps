@@ -25,9 +25,10 @@ export class LoginEffects {
       ofType(LoginActions.loadLoginInit),
       mergeMap((action) => { 
         return this.authService.tryLogin(action.username, action.password).pipe(
-            map(user =>(
-              LoginActions.loadLoginSuccess({ login: [{id:1, user}] })
-            ),
+            map(user => {
+               this.router.navigateByUrl("/main")
+               return LoginActions.loadLoginSuccess({ login: [{id:1, user}] });
+            },
             catchError(async (error) => 
               LoginActions.loadLoginFailure({ error })
           )
