@@ -15,6 +15,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
 import {HttpClientModule} from '@angular/common/http';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [AppComponent],
