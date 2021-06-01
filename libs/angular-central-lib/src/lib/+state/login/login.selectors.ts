@@ -33,5 +33,5 @@ export const getLoginEntities = createSelector(getLoginState, (state: LoginState
 
 export const getSelectedUser= createSelector(
   getLoginState,
-  (state: LoginState) => state.user
+  (state: LoginState) => state.entities[1].user.username
 );

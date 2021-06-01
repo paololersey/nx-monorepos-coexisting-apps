@@ -3,7 +3,7 @@
       <ion-content>
         <ion-list id="inbox-list">
           <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com: slice store</ion-note>
+          <ion-note>User: {{username$ | async }} </ion-note>
 
           <ion-menu-toggle
             auto-hide="false"
@@ -14,13 +14,14 @@
               [routerLink]="[p.url]"
               lines="none"
               detail="false"
-              routerLinkActive="selected">
+              routerLinkActive="selected"
+            >
               <ion-icon
                 slot="start"
                 [ios]="p.icon + '-outline'"
                 [md]="p.icon + '-sharp'"
               ></ion-icon>
-              <ion-label>{{ p.title }} - {{ p.url }}</ion-label>
+              <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

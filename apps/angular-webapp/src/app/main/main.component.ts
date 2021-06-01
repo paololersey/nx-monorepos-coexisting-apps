@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { getLoginEntities, getSelectedUser, LoginEntity } from '@my-org/angular-central-lib';
+import { Dictionary } from '@ngrx/entity';
+import { select, Store } from '@ngrx/store';
+import { User } from 'libs/angular-central-lib/src/lib/+state/login/user.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -7,6 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent{
  
+  username$: Observable<string> = this.store.pipe(select(getSelectedUser))
+  loginEntities$: Observable<Dictionary<LoginEntity>> = this.store.pipe(select(getLoginEntities))
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   public appPages = [
@@ -19,9 +26,12 @@ export class MainComponent{
   ];
   
  
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
+    /*this.username$.subscribe(username => {
+      console.log("user=" + username);
+    })*/
   }
 
   

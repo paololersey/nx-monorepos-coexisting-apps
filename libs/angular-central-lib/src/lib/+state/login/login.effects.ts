@@ -15,6 +15,8 @@ import { User } from './user.model';
 @Injectable()
 export class LoginEffects {
 
+  userModel: User = new User();
+
   constructor(private actions$: Actions, 
               private router: Router,
               private authService: AuthService,
@@ -25,9 +27,10 @@ export class LoginEffects {
       ofType(LoginActions.loadLoginInit),
       mergeMap((action) => { 
         return this.authService.tryLogin(action.username, action.password).pipe(
-            map(user => {
+            map(response => {
+               this.userModel.username = response.email
                this.router.navigateByUrl("/main")
-               return LoginActions.loadLoginSuccess({ login: [{id:1, user}] });
+               return LoginActions.loadLoginSuccess({ login: [{id:1, user: this.userModel}] });
             },
             catchError(async (error) => 
               LoginActions.loadLoginFailure({ error })

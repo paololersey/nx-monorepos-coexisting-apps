@@ -8,7 +8,7 @@ import { User } from './user.model';
 export const LOGIN_FEATURE_KEY = 'login';
 
 export interface LoginState extends EntityState<LoginEntity> {
-  user: User;
+
   loaded: boolean; // has the Login list been loaded
   error?: string | null; // last known error (if any)
 }

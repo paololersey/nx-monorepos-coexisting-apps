@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class LoginComponent implements OnInit {
 
   public user: User = new User();
-  sliceStore$: Observable<User> = this.store.pipe(select(getSelectedUser))
+
 
   constructor(private store: Store, private router: Router) { }
 
@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
     this.user.password ="test";
     this.store.dispatch(loadLoginInit({username: this.user.username, password: this.user.password}));
    
-    console.log(this.sliceStore$)
   }
 
 }
