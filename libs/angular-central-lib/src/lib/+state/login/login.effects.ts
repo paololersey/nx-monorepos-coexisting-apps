@@ -30,7 +30,8 @@ export class LoginEffects {
             map(response => {
                this.userModel.username = response.email
                this.router.navigateByUrl("/main")
-               return LoginActions.loadLoginSuccess({ login: [{id:1, user: this.userModel}] });
+               // we add the the 'user' as a first entity
+               return LoginActions.loadLoginSuccess({ login: [{id:0, user: this.userModel}] });
             },
             catchError(async (error) => 
               LoginActions.loadLoginFailure({ error })

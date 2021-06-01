@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { getSelectedUser, loadLoginInit } from '@my-org/angular-central-lib';
-import { select, Store } from '@ngrx/store';
+import { loadLoginInit } from '@my-org/angular-central-lib';
+import { Store } from '@ngrx/store';
 import { User } from 'libs/angular-central-lib/src/lib/+state/login/user.model';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',

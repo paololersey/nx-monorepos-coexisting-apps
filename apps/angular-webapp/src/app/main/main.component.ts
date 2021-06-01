@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { getLoginEntities, getSelectedUser, LoginEntity } from '@my-org/angular-central-lib';
+import { getLoginEntities, getSelectedUsername, LoginEntity } from '@my-org/angular-central-lib';
 import { Dictionary } from '@ngrx/entity';
 import { select, Store } from '@ngrx/store';
-import { User } from 'libs/angular-central-lib/src/lib/+state/login/user.model';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class MainComponent{
  
-  username$: Observable<string> = this.store.pipe(select(getSelectedUser))
+  username$: Observable<string> = this.store.pipe(select(getSelectedUsername))
   loginEntities$: Observable<Dictionary<LoginEntity>> = this.store.pipe(select(getLoginEntities))
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 

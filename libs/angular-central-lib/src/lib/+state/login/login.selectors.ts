@@ -31,7 +31,8 @@ export const getLoginEntities = createSelector(getLoginState, (state: LoginState
   selectEntities(state)
 );
 
-export const getSelectedUser= createSelector(
+export const getSelectedUsername= createSelector(
   getLoginState,
-  (state: LoginState) => state.entities[1].user.username
+  // we select the user as a first entity
+  (state: LoginState) => state.entities["0"].user.username
 );
