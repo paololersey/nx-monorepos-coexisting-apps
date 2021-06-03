@@ -28,9 +28,9 @@ export class MainComponent{
   constructor(private store: Store) { }
 
   ngOnInit(): void {
-    /*this.username$.subscribe(username => {
+    this.username$.subscribe(username => {
       console.log("user=" + username);
-    })*/
+    })
   }
 
   

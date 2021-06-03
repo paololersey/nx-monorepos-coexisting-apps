@@ -5,6 +5,7 @@ import { MainRoutingModule } from './main-routing.module';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { AngularCustomLibModule } from '@my-org/angular-custom-lib';
+import { FolderPage } from './folder/folder.page';
 
 
 @NgModule({
